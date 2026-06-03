@@ -1,0 +1,57 @@
+.header
+{
+    width: 100%;
+    height: 10vh;
+    /* height: 10%; */
+    /* height: 80px; */
+    background-color: var(--fundo-azul-background);
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* gap: 505px; */
+    padding: 0 2.5%;
+}
+.header .user{
+    width: 9%;
+    height: 50%;
+    background-color: var(--fundo-azul);
+    /* justify-self: self-start; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .2vw;
+
+}
+
+.fundo_back{
+    background-color: var(--fundo-azul);
+    /* justify-self: self-start; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .2vw;
+}
+
+
+.user p{
+    color: var(--branco);
+    font-family: var(--font-header);
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20%;
+    
+}
+.fundo_back .link{
+    text-decoration: none;   
+    color: var(--branco);
+    font-family: var(--font-texto);
+    
+
+}
