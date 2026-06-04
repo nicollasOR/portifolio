@@ -1,45 +1,53 @@
-import Link from 'next/link'
-import styles from './header.module.css'
+import Link from "next/link";
+import styles from "./header.module.css";
 
-
-const Header = () =>{
-    return(
-      <header className={styles.header}>
-        <div className={`${styles.fundo_back} ${styles.user}`}>
-          <p>nicollasOR</p>
-        </div>
-        <nav>
-          {/* <ul> */}
-            <li>
-              <div className={styles.fundo_back}>
-                <Link href="" className={styles.link}>Home</Link>
-              </div>
-            </li>
-            <li>
-              <div className={styles.fundo_back}>
-                <Link href="" className={styles.link}>Projects</Link>
-              </div>
-            </li>
-            <li>
-              <div className={styles.fundo_back}>
-                <Link href="" className={styles.link}>Stack</Link>
-              </div>
-            </li>
-            <li>
-              <div className={styles.fundo_back}>
-                <Link href="" className={styles.link}>Contact</Link>
-              </div>
-            </li>
-            <li>
-              <div className={styles.fundo_back} id={styles.idioma}>
+const Header = () => {
+  return (
+    <header className={styles.header}>
+      <div className={`${styles.fundo_back} ${styles.user}`}>
+        <p>nicollasOR</p>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <Link href="" className={`${styles.link} ${styles.fundo_back}`}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="" className={`${styles.link} ${styles.fundo_back}`}>
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              href=""
+              className={`${`${styles.link} ${styles.fundo_back}`} ${styles.fundo_back}`}
+            >
+              Stack
+            </Link>
+          </li>
+          <li>
+            <Link href="" className={`${styles.link} ${styles.fundo_back}`}>
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      {/* <div className={styles.fundo_back} id={styles.idioma}>
                 <button>pt-br</button>
                 <button>en</button>
-              </div>
-            </li>
-          {/* </ul> */}
-        </nav>
-      </header>
-    )
-}
+              </div> */}
+      <div className={styles.fundo_back} id={styles.idioma}>
+        <button>
+          <span>pt-br</span>
+        </button>
+        <button>
+          <span>en</span>
+        </button>
+      </div>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

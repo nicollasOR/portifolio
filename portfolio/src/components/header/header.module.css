@@ -1,5 +1,4 @@
-.header
-{
+.header {
     width: 100%;
     height: 10vh;
     /* height: 10%; */
@@ -11,9 +10,11 @@
     align-items: center;
     /* gap: 505px; */
     padding: 0 2.5%;
+    gap: 10%;
 }
-.header .user{
-    width: 9%;
+
+.header .user {
+    width: 12%;
     height: 50%;
     background-color: var(--fundo-azul);
     /* justify-self: self-start; */
@@ -24,7 +25,7 @@
 
 }
 
-.fundo_back{
+.fundo_back {
     background-color: var(--fundo-azul);
     /* justify-self: self-start; */
     display: flex;
@@ -34,24 +35,187 @@
 }
 
 
-.user p{
+.user p {
     color: var(--branco);
     font-family: var(--font-header);
     font-weight: 400;
     font-size: 20px;
 }
 
-.header nav{
+.header nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 20%;
-    
+    gap: 25%;
+    width: 40%;
+    height: 50%;
+    /* width: 152vw; */
+    border: 1px solid white;
+    margin-left: 20%;
+
 }
-.fundo_back .link{
-    text-decoration: none;   
+
+.header nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+
+}
+
+.header nav ul,
+.header nav ul li,
+.header nav ul li .link {
+    width: 100%;
+    height: 100%;
+}
+
+.header nav ul li {
+    background-color: var(--fundo-azul);
+
+}
+
+.link {
     color: var(--branco);
     font-family: var(--font-texto);
-    
+    font-size: 16px;
+    transition: .5s ease-in-out;
+    font-weight: 700;
+}
 
+
+.link:hover {
+    background: radial-gradient(circle, #ffffff, #1A2030);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+#idioma {
+    height: 65%;
+    width: 12%;
+    border-radius: 1vw;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+/* ==========================================
+   1. BORDA EXTERNA (#idioma)
+========================================== */
+#idioma::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: conic-gradient(transparent 70%, #ffffff 100%); 
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#idioma::after {
+    content: "";
+    position: absolute;
+    inset: 2px; /* Espessura da borda de fora */
+    background: transparent;
+    border-radius: inherit;
+    z-index: 0;
+    transition: background 0.3s ease;
+    pointer-events: none;
+}
+
+/* ==========================================
+   2. OS BOTÕES (Agora atuam como o container da luz interna)
+========================================== */
+#idioma button {
+    border: none;
+    width: 90%;
+    margin: 1% 2%;
+    height: 75%;
+    border-radius: .5vw;
+    cursor: pointer;
+    position: relative;
+    z-index: 1; 
+    overflow: hidden;
+    background: transparent; /* Deixa a luz de trás aparecer nas pontas */
+    padding: 0; /* Reseta o padding padrão */
+}
+
+/* LUZ DA BORDA DO BOTÃO */
+#idioma button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: conic-gradient(transparent 70%, #ffffff 100%); 
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+#idioma button span {
+    position: absolute;
+    inset: 2px; 
+    background-color: var(--preto);
+    border-radius: calc(.5vw - 1px); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; 
+    
+    font-size: 15px;
+    font-family: var(--font-botao);
+    font-weight: 600;
+    color: var(--branco);
+    transition: background 0.2s ease-in-out;
+}
+
+/* ==========================================
+   4. GATILHOS DE HOVER
+========================================== */
+
+/* Hover no bloco todo (Borda externa liga) */
+#idioma:hover::before {
+    opacity: 1;
+    animation: girarBorda 1.5s linear infinite;
+}
+#idioma:hover::after {
+    background: radial-gradient(ellipse at bottom center, #000000 0%, #1A2030 100%);
+}
+
+/* Hover específico no Botão (Borda interna liga e o fundo muda) */
+#idioma button:hover::before {
+    opacity: 1;
+    animation: girarBorda 1.2s linear infinite; 
+}
+
+#idioma button:hover span {
+    /* O seu gradiente entra direto na caixa de texto */
+    background: radial-gradient(ellipse at bottom center, #000000 0%, #1A2030 100%);
+}
+
+/* ==========================================
+   5. ANIMAÇÃO COMPARTILHADA
+========================================== */
+@keyframes girarBorda {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+@media (max-width: 768px) {
+    
 }
